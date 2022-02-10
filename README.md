@@ -1,2 +1,2 @@
-joe-selfbot made by tacolift#1337
+joe-selfbot made by [REDACTED]
 it's work in progress so expect many changes
