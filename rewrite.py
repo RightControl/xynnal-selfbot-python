@@ -13,7 +13,7 @@ import random
 import sys
 import os
 from subprocess import check_output
-
+# try to import most of the shit
 try:
     import discord
 except:
