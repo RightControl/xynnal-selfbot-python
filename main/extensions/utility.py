@@ -94,6 +94,15 @@ class Utilities(commands.Cog):
             await ctx.channel.send("you must specify a link!")
         else:
             await ctx.channel.send("https://lmgtfy.com/?q={}".format(l.replace(" ", "+")))
+    # Rage Quit (Leaves current server)
+    @commands.command()
+    async def ragequit(self,ctx,*,l):
+        ctx.message.delete()
+        guild = discord.utils.get(self.bot.guilds, name=l)
+        if not guild:
+            print('no guild found with that name')
+        else:
+            await guild.leave()
 
 def setup(bot):
     bot.add_cog(Utilities(bot))
