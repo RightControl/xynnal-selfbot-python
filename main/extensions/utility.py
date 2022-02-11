@@ -34,7 +34,7 @@ class Utilities(commands.Cog):
         else:
             try:
                 with requests.session() as ses:
-                    resp = ses.get(f'https://ipinfo.io/{ip}/json')
+                    resp = ses.get(f'https://ipinfo.io/{l}/json')
                 if'Wrong ip' in resp.text:
                     await ctx.channel.send('invalid ip!')
                 else:
@@ -103,6 +103,14 @@ class Utilities(commands.Cog):
             print('no guild found with that name')
         else:
             await guild.leave()
-
+    # COVID
+    @commands.command()
+    async def covid(self,ctx):
+        try:
+            with requests.session() as ses:
+                r = requests.get('https://corona-stats.online/' + '?format=json')
+                await ctx.channel.send('cases today: ' + str(r.json()['data'][0]['cases']))
+        except Exception as err:
+                print(f"{err}")
 def setup(bot):
     bot.add_cog(Utilities(bot))
