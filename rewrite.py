@@ -9,37 +9,9 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 '''
 import json
-import random
-import sys
 import os
-from subprocess import check_output
-# try to import most of the shit
-try:
-    import discord
-except:
-    check_output('pip3 install discord.py-self')
-    try:
-        import discord
-    except:
-            sys.exit("discord couldn't install..?")
-try:
-    import pyfiglet
-except:
-    check_output('pip3 install pyfiglet')
-    try:
-        import pyfiglet
-    except:
-            sys.exit("pyfiglet couldn't install..?")
-try:
-    import requests
-except:
-    check_output('pip3 install requests')
-    try:
-        import requests
-    except:
-            sys.exit("requests couldn't install..?")
+import discord
 from discord.ext import commands
-
 with open("config.json") as f:
     configuration = json.load(f)
 
@@ -47,9 +19,15 @@ token = configuration.get("token")
 prefix = configuration.get("prefix")
 
 bot = commands.Bot(command_prefix=prefix, self_bot = True)
-
+bot.remove_command('help')
 #print(f"User Token: {token}")
 #print(f"Bot Prefix: {prefix}")
+
+print(''' __  ____   ___   _ _   _    _    _       ____  _____ _     _____ ____   ___ _____ 
+ \ \/ /\ \ / / \ | | \ | |  / \  | |     / ___|| ____| |   |  ___| __ ) / _ \_   _|
+  \  /  \ V /|  \| |  \| | / _ \ | |     \___ \|  _| | |   | |_  |  _ \| | | || |
+  /  \   | | | |\  | |\  |/ ___ \| |___   ___) | |___| |___|  _| | |_) | |_| || |
+ /_/\_\  |_| |_| \_|_| \_/_/   \_\_____| |____/|_____|_____|_|   |____/ \___/ |_|\n''')
 print(f"[+] User Token: {token}")
 print(f"[+] User Prefix: {prefix}\n")
 
