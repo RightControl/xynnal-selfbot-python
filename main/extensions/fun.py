@@ -31,7 +31,8 @@ class Fun(commands.Cog):
         if not l:
             await ctx.channel.send('no question provided')
         else:
-            answers = ["Yeah", "Nope", "Def not", "Doubt it", "I agree", "Surely", "Def", "Yuh"]
+            answers = ["Yeah", "Nope", "Def not", "Doubt it", "I agree", "Surely", "Def", "Yuh", "Highly doubt it", "No. Just no.", "Think about your question and ask again.", "Better not tell you now.", "Cannot predict now.", "Concentrate and ask again.", "Don't count on it.", "Oh hell nah", "It's possible.", "Reply hazy, try again.", "Signs point to yes.", "It is certain.", "Cannot predict now.", "Uhh", "My sources say no.", "Very doubtful."]
+            await ctx.message.delete()
             await ctx.channel.send('``'+random.choice(answers)+'``')
     # Flood chat
     @commands.command()
