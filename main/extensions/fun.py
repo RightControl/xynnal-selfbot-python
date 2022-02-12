@@ -43,6 +43,16 @@ class Fun(commands.Cog):
         await asyncio.sleep(1)
         await ctx.channel.send(j)
         await asyncio.sleep(1)
+    # Random Slur
+    @commands.command()
+    async def rslur(self,ctx):
+        # This uses invis unicode characters btw
+        # https://unicode-table.com/en/00AD/
+
+        slurs = ["n­igga", "n­igger", "r­etard", "g­ay", "tr­anny", "f­aggot"]
+        
+        await ctx.message.delete()
+        await ctx.channel.send(random.choice(slurs))
 
 def setup(bot):
     bot.add_cog(Fun(bot))
