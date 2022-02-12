@@ -4,9 +4,6 @@ import pyfiglet
 import requests
 import base64
 import asyncio
-import sys
-import webbrowser
-import bs4
 
 class Utilities(commands.Cog):
     '''
