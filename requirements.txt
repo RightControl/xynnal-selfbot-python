@@ -1,0 +1,6 @@
+discord.py-self
+random
+pybase64
+asyncio
+pyfiglet
+requests
